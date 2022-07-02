@@ -1,4 +1,8 @@
-variable "AWS_ACCESS_KEY" {}
+variable "AWS_ACCESS_KEY" {
+  type    = string
+  default = "AKIA372QAHHSJTTPBH73"
+}
+
 
 variable "AWS_SECRET_KEY" {}
 
