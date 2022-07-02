@@ -7,7 +7,7 @@ resource "aws_key_pair" "levelup_key3" {
 resource "aws_instance" "DockerInstance" {
   ami               = lookup(var.AMIS, var.AWS_REGION)
   instance_type     = "t2.micro"
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-2a"
   key_name          = aws_key_pair.levelup_key3.key_name
 
   tags = {
@@ -18,7 +18,7 @@ resource "aws_instance" "DockerInstance" {
 
 #EBS resource Creation
 resource "aws_ebs_volume" "ebs-volume-1" {
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-2a"
   size              = 50
   type              = "gp2"
 
