@@ -5,12 +5,13 @@ resource "aws_key_pair" "levelup_key3" {
 
 #Create AWS Instance
 resource "aws_instance" "DockerInstance" {
-  ami           = lookup(var.AMIS, var.AWS_REGION)
-  instance_type = "t2.micro"
-  key_name      = aws_key_pair.levelup_key3.key_name
+  ami               = lookup(var.AMIS, var.AWS_REGION)
+  instance_type     = "t2.micro"
+  availability_zone = "us-east-1a"
+  key_name          = aws_key_pair.levelup_key3.key_name
 
   tags = {
-    Name = "custom_instance2"
+    Name = "ebs_instance2"
   }
 
 }
