@@ -1,5 +1,5 @@
-resource "aws_key_pair" "levelup_key2" {
-  key_name   = "levelup_key2"
+resource "aws_key_pair" "levelup_key3" {
+  key_name   = "levelup_key3"
   public_key = file(var.PATH_TO_PUBLIC_KEY)
 }
 
@@ -7,7 +7,7 @@ resource "aws_key_pair" "levelup_key2" {
 resource "aws_instance" "DockerInstance" {
   ami           = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.levelup_key2.key_name
+  key_name      = aws_key_pair.levelup_key3.key_name
 
   tags = {
     Name = "custom_instance2"
